@@ -1,5 +1,6 @@
 package com.example.loginscreenwithsocialsigninbutton
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -24,7 +25,10 @@ class MainActivity : AppCompatActivity() {
         loginButton.setOnClickListener{
             val userName = usernameInput.text.toString()
             val password = usernameInput.text.toString()
+            val navigate = Intent(this@MainActivity, Register::class.java)
+            startActivity(navigate)
             Log.i("Test Credential", "USerName : $userName and password is $password")
+
         }
     }
 }
