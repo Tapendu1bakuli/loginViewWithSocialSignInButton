@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var usernameInput : EditText
     lateinit var userPasswordInput : EditText
     lateinit var loginButton : Button
+    lateinit var forgot_pasword : TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,6 +31,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(navigate)
             Log.i("Test Credential", "USerName : $userName and password is $password")
 
+        }
+         forgot_pasword = findViewById(R.id.reset_password)
+        forgot_pasword.setOnClickListener{
+            val intent = Intent(this, ForgotPassword::class.java)
+            startActivity(intent)
         }
     }
 }
